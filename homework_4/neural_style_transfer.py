@@ -151,13 +151,13 @@ def main(config):
             denorm = transforms.Normalize((-2.12, -2.04, -1.80), (4.37, 4.46, 4.44))
             img = target.clone().cpu().squeeze()
             img = denorm(img.data).clamp_(0, 1)
-            torchvision.utils.save_image(img, 'output-%d.png' % (step + 1))
+            torchvision.utils.save_image(img, 'output-%d1.png' % (step + 1))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--content', type=str, default='./content.jpg')
-    parser.add_argument('--style', type=str, default='./style.jpg')
+    parser.add_argument('--content', type=str, default='./content1.jpg')
+    parser.add_argument('--style', type=str, default='./style1.jpg')
     parser.add_argument('--max_size', type=int, default=400)
     parser.add_argument('--total_step', type=int, default=5000)
     parser.add_argument('--log_step', type=int, default=10)
